@@ -51,5 +51,5 @@ app.post('/messages', (req, res) => {
         .catch((err) => {
             console.log(`Error making query ${queryText}`, err);
             res.sendStatus(500);
-        })
-})
+        });
+});
