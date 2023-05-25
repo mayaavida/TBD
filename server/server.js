@@ -15,7 +15,7 @@ const pool = new pg.Pool({
     host: 'db.bit.io',
     port: 5432,
     ssl: true,
-    database: 'mayaavida/trial',
+    database: 'mayaavida/messages',
     user: 'mayaavida',
     password: DB_PASSWORD
 });
