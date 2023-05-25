@@ -37,3 +37,19 @@ app.get('/messages', (req, res) => {
         res.sendStatus(500);
     });
 });
+
+app.post('/messages', (req, res) => {
+    const newMessage = req.body;
+    const queryText = `
+        INSERT INTO "messages" ("id", "title", "text", "timestamp")
+        VALUES ('${newMessage.id}', '${newMessage.title}', '${newMessage.text}', '${newMessage.timestamp}');
+    `;
+    pool.query(queryText)
+        .then(() => {
+            res.sendStatus(201);
+        })
+        .catch((err) => {
+            console.log(`Error making query ${queryText}`, err);
+            res.sendStatus(500);
+        })
+})
