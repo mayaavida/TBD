@@ -3,7 +3,7 @@ const app = express();
 const pg = require('pg');
 
 const PORT = process.env.PORT || 8000;
-const DB_PASSWORD = process.env.DB_PASSWORD
+const DB_PASSWORD = process.env.DB_PASSWORD;
 
 app.listen(PORT, () => {
     console.log('listening on port: ', PORT);
