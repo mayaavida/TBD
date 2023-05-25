@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/messages', (req, res) => {
-    let query = 'SELECT * FROM "messages" ORDER BY "timestamp" ASC LIMIT 10';
+    let query = 'SELECT * FROM "messages" ORDER BY "timestamp" DESC LIMIT 10';
 
     pool.query(query)
     .then((result) => {
